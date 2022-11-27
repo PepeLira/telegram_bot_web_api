@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chat_id: 1
+  telegram_id: 1
+  chat_name: MyString
+  username: MyString
+  first_name: MyString
+  numbers_wins: 1
+  trivia_wins: 1
+  hangman_wins: 1
+
+two:
+  chat_id: 1
+  telegram_id: 1
+  chat_name: MyString
+  username: MyString
+  first_name: MyString
+  numbers_wins: 1
+  trivia_wins: 1
+  hangman_wins: 1

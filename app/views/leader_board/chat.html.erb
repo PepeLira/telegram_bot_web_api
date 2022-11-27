@@ -1,0 +1,91 @@
+<h2><%= @chat_name %> Leader Board</h2>
+
+<div class="card center">
+  <div class="card-header">
+    Numbers Leader Board
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>UserName</th>
+            <th>FirstName</th>
+            <th>Total Wins</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% i = 1 %>
+        <% @top_numbers.each do |player_h| %>
+        <tr>
+            <th scope="row"> <%= i %></th>
+            <td><%= player_h["username"] %></td>
+            <td><%= player_h["first_name"] %></td>
+            <td><%= player_h["numbers_wins"] %></td>
+        </tr>
+        <% i += 1 %>
+        <% end %>
+        </tbody>
+    </table>
+  </div>
+</div>
+<br>
+<div class="card center">
+  <div class="card-header">
+    Trivia Leader Board
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>UserName</th>
+            <th>FirstName</th>
+            <th>Total Wins</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% i = 1 %>
+        <% @top_trivia.each do |player_h| %>
+        <tr>
+            <th scope="row"> <%= i %></th>
+            <td><%= player_h["username"] %></td>
+            <td><%= player_h["first_name"] %></td>
+            <td><%= player_h["trivia_wins"] %></td>
+        </tr>
+        <% i += 1 %>
+        <% end %>
+        </tbody>
+    </table>
+  </div>
+</div>
+<br>
+<div class="card center">
+  <div class="card-header">
+    Trivia Leader Board
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>UserName</th>
+            <th>FirstName</th>
+            <th>Total Wins</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% i = 1 %>
+        <% @top_hangman.each do |player_h| %>
+        <tr>
+            <th scope="row"> <%= i %></th>
+            <td><%= player_h["username"] %></td>
+            <td><%= player_h["first_name"] %></td>
+            <td><%= player_h["hangman_wins"] %></td>
+        </tr>
+        <% i += 1 %>
+        <% end %>
+        </tbody>
+    </table>
+  </div>
+</div>
