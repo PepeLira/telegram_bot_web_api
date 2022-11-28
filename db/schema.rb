@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_25_223015) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_28_230149) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "players", force: :cascade do |t|
-    t.integer "chat_id"
-    t.integer "telegram_id"
+    t.bigint "chat_id"
+    t.bigint "telegram_id"
     t.string "chat_name"
     t.string "username"
     t.string "first_name"
