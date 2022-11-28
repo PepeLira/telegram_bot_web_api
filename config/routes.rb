@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post 'player/post_player_stats'
-      get 'player/get_player_stats/:chat_id/:telegram_id', to: 'player#get_player_stats'
+      get 'player/get_player_stats/:chat_id/', to: 'player#get_player_stats'
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

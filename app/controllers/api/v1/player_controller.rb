@@ -1,9 +1,9 @@
 class Api::V1::PlayerController < ApplicationController
 
   def post_player_stats
-    if player
+    if find_player
       update_player
-      render json: player, status: 201
+      render json: find_player, status: 201
     else
       p = Player.new(
         chat_id: player_params[:chat_id],
@@ -16,7 +16,7 @@ class Api::V1::PlayerController < ApplicationController
         hangman_wins: player_params[:hangman_wins]
       )
       if p.save
-        render json: player, status: 200
+        render json: find_player, status: 200
       else
         render json: {
           error: "Error Creatin new player",
@@ -27,26 +27,25 @@ class Api::V1::PlayerController < ApplicationController
   end
 
   def get_player_stats
-    if params[:chat_id].present? && params[:telegram_id].present?
-      p = player(params[:chat_id],params[:telegram_id])
-      render json: p, status: 200
+    if params[:chat_id].present?
+      players = Player.where(chat_id: params[:chat_id].to_i)
+      render json: players, status: 200
     else 
       render json: {
         error: "Error Creatin new player",
         status: 500
       }
     end
-
   end
 
   private
 
-  def player(c_id =  player_params[:chat_id], t_id = player_params[:telegram_id])
+  def find_player(c_id =  player_params[:chat_id], t_id = player_params[:telegram_id])
     Player.find_by(chat_id: c_id, telegram_id: t_id)
   end
 
   def update_player
-    player.update(
+    find_player.update(
       chat_id: player_params[:chat_id],
       telegram_id: player_params[:telegram_id],
       chat_name: player_params[:chat_name],
